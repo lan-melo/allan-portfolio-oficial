@@ -6,19 +6,6 @@ export function Hero() {
       id="inicio"
       className="relative overflow-hidden pt-32 pb-20 lg:min-h-[700px] lg:pt-40"
     >
-      {/* decorative blob */}
-      <div
-        className="animate-blob pointer-events-none absolute -right-20 top-20 hidden h-[560px] w-[560px] rounded-full opacity-95 lg:block"
-        style={{
-          background:
-            "radial-gradient(circle at 30% 30%, #4a6cf7 0%, #4a6cf7 60%, rgba(74,108,247,0) 70%)",
-        }}
-        aria-hidden
-      />
-      <div
-        className="animate-float pointer-events-none absolute right-1/4 bottom-10 hidden h-12 w-12 rounded-full bg-brand/30 lg:block"
-        aria-hidden
-      />
 
       <div className="container-x relative">
         <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -49,11 +36,44 @@ export function Hero() {
           </Reveal>
 
           <Reveal direction="left" delay={120}>
-            <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="relative mx-auto w-full max-w-[520px]">
+              <div
+                className="pointer-events-none absolute right-0 top-0 z-0 h-[78%] w-[78%] rounded-full bg-brand"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-0 z-[1]"
+                style={{
+                  backgroundImage: [
+                    "repeating-linear-gradient(to right, rgba(74,108,247,0.5) 0 4px, transparent 4px 10px)",
+                    "repeating-linear-gradient(to right, rgba(74,108,247,0.5) 0 4px, transparent 4px 10px)",
+                    "repeating-linear-gradient(to right, rgba(74,108,247,0.5) 0 4px, transparent 4px 10px)",
+                    "repeating-linear-gradient(to bottom, rgba(74,108,247,0.5) 0 4px, transparent 4px 10px)",
+                    "repeating-linear-gradient(to bottom, rgba(74,108,247,0.5) 0 4px, transparent 4px 10px)",
+                    "repeating-linear-gradient(to bottom, rgba(74,108,247,0.5) 0 4px, transparent 4px 10px)",
+                  ].join(", "),
+                  backgroundSize:
+                    "100% 1px, 100% 1px, 100% 1px, 1px 100%, 1px 100%, 1px 100%",
+                  backgroundPosition:
+                    "0 18%, 0 62%, 0 88%, 18% 0, 62% 0, 88% 0",
+                  backgroundRepeat: "no-repeat",
+                }}
+                aria-hidden
+              />
               <img
                 src="/figma/allan-foto.png"
                 alt="Allan Melo"
-                className="relative z-10 mx-auto w-full max-w-[520px] transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+                className="relative z-10 mx-auto w-full transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+              />
+              <div
+                className="absolute bottom-3 right-3 z-20 grid h-16 w-16 place-items-center rounded-full bg-white shadow-lg ring-1 ring-black/5"
+                aria-hidden
+              >
+                <img src="/figma/a-mark.svg" alt="" className="h-8 w-8" />
+              </div>
+              <div
+                className="absolute -bottom-1 left-0 right-0 z-10 h-[3px] bg-brand"
+                aria-hidden
               />
             </div>
           </Reveal>

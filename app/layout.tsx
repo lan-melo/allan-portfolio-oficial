@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Allan Melo — Senior Product Designer e Design Engineer",
+  title: "Allan Melo",
   description:
     "Portfólio de Allan Melo. UX orientado a dados, design systems escaláveis e interfaces que convertem.",
 };

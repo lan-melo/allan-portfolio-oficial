@@ -47,7 +47,7 @@ export function About() {
                 Baixar currículo
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/allansmelo/"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-outline"

@@ -69,15 +69,17 @@ export function Footer() {
         <div className="mt-16 border-t border-white/10 pt-12">
           <div className="flex justify-center gap-2">
             {[
-              { icon: Linkedin, label: "LinkedIn", href: "#" },
+              { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/allansmelo/", external: true },
               { icon: Github, label: "GitHub", href: "#" },
               { icon: Instagram, label: "Instagram", href: "#" },
               { icon: Mail, label: "E-mail", href: "mailto:allansmelo97@gmail.com" },
-            ].map(({ icon: Icon, label, href }) => (
+            ].map(({ icon: Icon, label, href, external }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
                 className="grid h-10 w-10 place-items-center rounded-full text-[#959cb1] transition-all duration-300 hover:-translate-y-1 hover:bg-brand hover:text-white"
               >
                 <Icon className="h-5 w-5" />
