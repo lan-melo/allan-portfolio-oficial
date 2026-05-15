@@ -12,7 +12,7 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet tempus augue, ac venenatis lectus tempus ut. Sed sodales erat a libero.",
+      "Tive o prazer de trabalhar com o Allan na XP Educação durante o projeto de lançamento da nova Área do Aluno — um desafio grande e estratégico, que exigiu muita colaboração entre Produto, Design e Tecnologia. Desde o início, o Allan se destacou não só pelas entregas de altíssima qualidade em Design, mas também pela forma como se relaciona com o time. Ele tem uma escuta ativa, entende rapidamente o problema que estamos tentando resolver e contribui com soluções criativas e viáveis, sempre levando em conta as perspectivas de Produto e de Desenvolvimento. É raro encontrar alguém com tanta habilidade técnica e, ao mesmo tempo, com tanta sensibilidade para o trabalho em equipe. Trabalhar com o Allan foi leve, produtivo e inspirador, e eu o recomendo fortemente.",
     name: "Mariana Soares",
     role: "Product and Project Manager @ Amazon",
     avatar: "/figma/avatar-mariana.svg",
@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet tempus augue, ac venenatis lectus tempus ut. Sed sodales erat a libero.",
+      "Allan é uma pessoa que qualquer pessoa quer ter em um time. Super disposto a ajudar sempre colaborou muito em projeto de equipe. Super recomendo como profissional devido a sua capacidade de aprendizado muito eficaz.",
     name: "Iago Machado",
     role: "Sênior Software Developer @ CI&T",
     avatar: "/figma/avatar-iago.svg",

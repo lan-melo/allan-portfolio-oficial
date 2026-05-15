@@ -74,7 +74,7 @@ export function Projects() {
         </div>
 
         <Reveal className="mt-12 flex justify-center">
-          <a href="#" className="btn-outline">
+          <a href="#" className="btn-primary w-full lg:w-auto">
             Ver todos projetos
           </a>
         </Reveal>

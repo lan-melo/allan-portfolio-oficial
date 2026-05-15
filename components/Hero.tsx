@@ -10,10 +10,7 @@ export function Hero() {
       <div className="container-x relative">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal direction="right">
-            <p className="text-base font-semibold text-brand">
-              Olá, tudo bem? <span aria-hidden>👋</span> Eu sou
-            </p>
-            <h1 className="mt-2 text-4xl font-bold leading-tight text-ink sm:text-5xl lg:text-[45px] lg:leading-[1.1]">
+            <h1 className="text-4xl font-bold leading-tight text-ink sm:text-5xl lg:text-[45px] lg:leading-[1.1]">
               Allan Melo
             </h1>
             <h2 className="mt-3 text-xl text-muted">
@@ -25,12 +22,12 @@ export function Hero() {
               fluxo, cliques em conversões e usuários em fãs com UX orientado a
               dados, não a achismos.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:flex-wrap">
               <a
                 href="https://web.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary max-md:hidden"
+                className="btn-primary w-full max-md:hidden lg:w-auto"
               >
                 Entrar em contato
               </a>
@@ -38,11 +35,11 @@ export function Hero() {
                 href="https://api.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary md:hidden"
+                className="btn-primary w-full md:hidden lg:w-auto"
               >
                 Entrar em contato
               </a>
-              <a href="#projetos" className="btn-outline">
+              <a href="#projetos" className="btn-outline w-full lg:w-auto">
                 Ver todos projetos
               </a>
             </div>
@@ -53,7 +50,7 @@ export function Hero() {
               <img
                 src="/figma/allan-foto.png"
                 alt="Allan Melo"
-                className="relative z-10 mx-auto w-full transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+                className="relative z-10 mx-auto w-full translate-x-[15%] transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
               />
             </div>
           </Reveal>
