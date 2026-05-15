@@ -18,14 +18,8 @@ export function Header() {
     <header className="absolute inset-x-0 top-0 z-30">
       <div className="container-x">
         <div className="flex items-center justify-between py-6">
-          <a href="#" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand text-white">
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 20 12 4l8 16" />
-                <path d="M7 14h10" />
-              </svg>
-            </span>
-            <span className="text-2xl font-bold text-brand">Allan Melo</span>
+          <a href="#" className="flex items-center" aria-label="Allan Melo">
+            <img src="/figma/logo.svg" alt="Allan Melo" className="h-10 w-auto" />
           </a>
 
           <nav className="hidden items-center gap-2 lg:flex">

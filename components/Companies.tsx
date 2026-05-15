@@ -1,4 +1,11 @@
-const companies = ["XP Educação", "Hazo", "Tecnologia Única", "CI&T", "Amazon", "Unifast"];
+const companies = [
+  { src: "/figma/company-1.svg", alt: "Empresa 1" },
+  { src: "/figma/company-2.svg", alt: "Empresa 2" },
+  { src: "/figma/company-3.svg", alt: "Empresa 3" },
+  { src: "/figma/company-4.svg", alt: "Empresa 4" },
+  { src: "/figma/company-5.svg", alt: "Empresa 5" },
+  { src: "/figma/company-6.svg", alt: "Empresa 6" },
+];
 
 export function Companies() {
   return (
@@ -12,14 +19,14 @@ export function Companies() {
           </p>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-70">
-          {companies.map((name) => (
-            <div
-              key={name}
-              className="text-xl font-semibold tracking-tight text-ink/70"
-            >
-              {name}
-            </div>
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+          {companies.map((c) => (
+            <img
+              key={c.src}
+              src={c.src}
+              alt={c.alt}
+              className="h-16 w-auto opacity-80 transition hover:opacity-100"
+            />
           ))}
         </div>
       </div>
