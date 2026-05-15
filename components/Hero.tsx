@@ -52,7 +52,7 @@ export function Hero() {
           src="/figma/allan-foto.png"
           alt=""
           aria-hidden
-          className="absolute bottom-0 left-0 block h-full w-auto max-w-none transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="absolute bottom-0 left-0 block h-[85%] w-auto max-w-none transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
         />
       </div>
     </section>
