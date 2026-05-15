@@ -38,7 +38,12 @@ export function About() {
               </li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#" className="btn-primary">
+              <a
+                href="/allan-melo-cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
                 Baixar currículo
               </a>
               <a

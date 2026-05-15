@@ -9,7 +9,10 @@ const quickLinks = [
   "Contato",
 ];
 
-const otherLinks = ["Entrar em contato", "Baixar currículo"];
+const otherLinks: { label: string; href: string; external?: boolean }[] = [
+  { label: "Entrar em contato", href: "mailto:allansmelo97@gmail.com" },
+  { label: "Baixar currículo", href: "/allan-melo-cv.pdf", external: true },
+];
 
 export function Footer() {
   return (
@@ -46,10 +49,13 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold">Outros</h3>
             <ul className="mt-8 space-y-3">
-              {otherLinks.map((label) => (
+              {otherLinks.map(({ label, href, external }) => (
                 <li key={label}>
                   <a
-                    href="#"
+                    href={href}
+                    {...(external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                     className="text-base text-[#959cb1] transition-colors hover:text-white"
                   >
                     {label}
