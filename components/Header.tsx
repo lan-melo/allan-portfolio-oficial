@@ -93,7 +93,7 @@ export function Header() {
         </div>
 
         <div
-          className="h-[3px] w-full overflow-hidden bg-brand/10"
+          className="h-[3px] w-full overflow-hidden bg-white"
           role="progressbar"
           aria-label="Progresso de leitura"
           aria-valuemin={0}
