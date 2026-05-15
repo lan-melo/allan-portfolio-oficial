@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 type Item = {
   title: string;
   org: string;
@@ -75,7 +77,7 @@ const items: Item[] = [
 
 function Period({ children }: { children: React.ReactNode }) {
   return (
-    <span className="mt-1 inline-flex items-center rounded-full bg-brand px-4 py-1.5 text-xs font-semibold text-white">
+    <span className="mt-1 inline-flex items-center rounded-full bg-brand px-4 py-1.5 text-xs font-semibold text-white transition-transform duration-300 hover:scale-105">
       {children}
     </span>
   );
@@ -86,7 +88,9 @@ function ItemCard({ item }: { item: Item }) {
     item.side === "left" ? "lg:items-end lg:text-right" : "lg:items-start lg:text-left";
   return (
     <div className={`flex flex-col items-start ${align}`}>
-      <h3 className="text-xl font-semibold leading-tight text-ink">{item.title}</h3>
+      <h3 className="text-xl font-semibold leading-tight text-ink transition-colors duration-300 group-hover:text-brand">
+        {item.title}
+      </h3>
       <p className="mt-1 text-base font-semibold text-muted">{item.org}</p>
       <Period>{item.period}</Period>
       {item.description && (
@@ -113,14 +117,14 @@ export function Resume() {
   return (
     <section id="curriculo" className="py-24 lg:py-32">
       <div className="container-x">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Educação e experiência</p>
           <h2 className="mt-3 h-section">Meu currículo</h2>
           <p className="mt-4 text-base text-muted">
             Confira um pouco da minha experiência profissional e também dos meus
             estudos
           </p>
-        </div>
+        </Reveal>
 
         <div className="relative mx-auto mt-16 max-w-5xl">
           <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-[#d7dfff] lg:block" />
@@ -128,17 +132,22 @@ export function Resume() {
           <ul className="space-y-12 lg:space-y-14">
             {items.map((item, idx) => (
               <li key={idx} className="relative">
-                <div
-                  className={`grid gap-6 lg:grid-cols-2 lg:gap-20 ${
-                    item.side === "right" ? "lg:[&>div]:col-start-2" : ""
-                  }`}
+                <Reveal
+                  direction={item.side === "left" ? "right" : "left"}
+                  delay={40}
                 >
-                  <div className="rounded-2xl bg-white p-6 shadow-card lg:bg-transparent lg:p-0 lg:shadow-none">
-                    <ItemCard item={item} />
+                  <div
+                    className={`group grid gap-6 lg:grid-cols-2 lg:gap-20 ${
+                      item.side === "right" ? "lg:[&>div]:col-start-2" : ""
+                    }`}
+                  >
+                    <div className="rounded-2xl bg-white p-6 shadow-card transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-soft lg:bg-transparent lg:p-0 lg:shadow-none lg:hover:translate-y-0 lg:hover:shadow-none">
+                      <ItemCard item={item} />
+                    </div>
                   </div>
-                </div>
+                </Reveal>
                 <span
-                  className="absolute left-1/2 top-2 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-brand bg-white lg:block"
+                  className="absolute left-1/2 top-2 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-brand bg-white transition-transform duration-500 hover:scale-125 lg:block"
                   aria-hidden
                 />
               </li>
