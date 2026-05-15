@@ -37,12 +37,12 @@ export function About() {
                 +33% de aumento de engajamento em 30 dias
               </li>
             </ul>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:flex-wrap">
               <a
                 href="/allan-melo-cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
+                className="btn-primary w-full lg:w-auto"
               >
                 Baixar currículo
               </a>
@@ -50,7 +50,7 @@ export function About() {
                 href="https://www.linkedin.com/in/allansmelo/"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-outline"
+                className="btn-outline w-full lg:w-auto"
               >
                 Ver LinkedIn
               </a>
