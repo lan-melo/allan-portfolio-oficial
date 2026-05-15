@@ -1,4 +1,4 @@
-import { Linkedin, Github, Instagram, Mail } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const quickLinks = [
   "Principal",
@@ -67,24 +67,16 @@ export function Footer() {
         </div>
 
         <div className="mt-16 border-t border-white/10 pt-12">
-          <div className="flex justify-center gap-2">
-            {[
-              { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/allansmelo/", external: true },
-              { icon: Github, label: "GitHub", href: "#" },
-              { icon: Instagram, label: "Instagram", href: "#" },
-              { icon: Mail, label: "E-mail", href: "mailto:allansmelo97@gmail.com" },
-            ].map(({ icon: Icon, label, href, external }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                className="grid h-10 w-10 place-items-center rounded-full text-[#959cb1] transition-all duration-300 hover:-translate-y-1 hover:bg-brand hover:text-white"
-              >
-                <Icon className="h-5 w-5" />
-              </a>
-            ))}
+          <div className="flex justify-center">
+            <a
+              href="https://www.linkedin.com/in/allansmelo/"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-10 w-10 place-items-center rounded-full text-[#959cb1] transition-all duration-300 hover:-translate-y-1 hover:bg-brand hover:text-white"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
           </div>
           <p className="mt-6 text-center text-base text-[#959cb1]">
             Todos os direitos reservados © Allan Melo 2026

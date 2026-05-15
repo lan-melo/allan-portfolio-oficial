@@ -14,12 +14,22 @@ const navItems = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 12);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(100, (y / max) * 100) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -80,6 +90,20 @@ export function Header() {
               <Menu className="h-6 w-6 text-ink" />
             )}
           </button>
+        </div>
+
+        <div
+          className="h-[3px] w-full overflow-hidden bg-brand/10"
+          role="progressbar"
+          aria-label="Progresso de leitura"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(progress)}
+        >
+          <div
+            className="h-full bg-brand transition-[width] duration-100 ease-out"
+            style={{ width: `${progress}%` }}
+          />
         </div>
 
         <div
