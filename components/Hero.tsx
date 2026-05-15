@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 export function Hero() {
   return (
     <section
@@ -6,7 +8,7 @@ export function Hero() {
     >
       {/* decorative blob */}
       <div
-        className="pointer-events-none absolute -right-20 top-20 hidden h-[560px] w-[560px] rounded-full opacity-95 lg:block"
+        className="animate-blob pointer-events-none absolute -right-20 top-20 hidden h-[560px] w-[560px] rounded-full opacity-95 lg:block"
         style={{
           background:
             "radial-gradient(circle at 30% 30%, #4a6cf7 0%, #4a6cf7 60%, rgba(74,108,247,0) 70%)",
@@ -14,13 +16,13 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute right-1/4 bottom-10 hidden h-12 w-12 rounded-full bg-brand/30 lg:block"
+        className="animate-float pointer-events-none absolute right-1/4 bottom-10 hidden h-12 w-12 rounded-full bg-brand/30 lg:block"
         aria-hidden
       />
 
       <div className="container-x relative">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
+          <Reveal direction="right">
             <p className="text-base font-semibold text-brand">
               Olá, tudo bem? <span aria-hidden>👋</span> Eu sou
             </p>
@@ -44,15 +46,17 @@ export function Hero() {
                 Ver todos projetos
               </a>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <img
-              src="/figma/allan-foto.png"
-              alt="Allan Melo"
-              className="relative z-10 mx-auto w-full max-w-[520px]"
-            />
-          </div>
+          <Reveal direction="left" delay={120}>
+            <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+              <img
+                src="/figma/allan-foto.png"
+                alt="Allan Melo"
+                className="relative z-10 mx-auto w-full max-w-[520px] transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+              />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

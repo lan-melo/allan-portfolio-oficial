@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 type Project = {
   title: string;
   description: string;
@@ -39,42 +41,43 @@ export function Projects() {
   return (
     <section id="projetos" className="py-24 lg:py-32">
       <div className="container-x">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Portfolios</p>
           <h2 className="mt-3 h-section">Projetos recentes</h2>
           <p className="mt-4 text-base text-muted">
             Cada projeto aqui não é só um case, mas é uma hipótese validada.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              className="group overflow-hidden rounded-2xl bg-white shadow-card transition hover:-translate-y-1 hover:shadow-soft"
-            >
-              <div className="aspect-[16/9] overflow-hidden bg-surface">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-7">
-                <h3 className="text-2xl font-bold text-ink">{project.title}</h3>
-                <p className="mt-3 text-base leading-relaxed text-muted">
-                  {project.description}
-                </p>
-              </div>
-            </article>
+          {projects.map((project, idx) => (
+            <Reveal key={project.title} delay={(idx % 2) * 100}>
+              <article className="group h-full overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-soft">
+                <div className="aspect-[16/9] overflow-hidden bg-surface">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-7">
+                  <h3 className="text-2xl font-bold text-ink transition-colors duration-300 group-hover:text-brand">
+                    {project.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-muted">
+                    {project.description}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <Reveal className="mt-12 flex justify-center">
           <a href="#" className="btn-outline">
             Ver todos projetos
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

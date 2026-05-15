@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
@@ -13,54 +13,87 @@ const navItems = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-30">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/85 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.18)] backdrop-blur-md"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container-x">
-        <div className="flex items-center justify-between py-6">
-          <a href="#" className="flex items-center" aria-label="Allan Melo">
-            <img src="/figma/logo.svg" alt="Allan Melo" className="h-10 w-auto" />
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${
+            scrolled ? "py-3" : "py-6"
+          }`}
+        >
+          <a
+            href="#"
+            className="flex items-center transition-transform duration-300 hover:scale-105"
+            aria-label="Allan Melo"
+          >
+            <img
+              src="/figma/logo.svg"
+              alt="Allan Melo"
+              className={`w-auto transition-all duration-300 ${
+                scrolled ? "h-8" : "h-10"
+              }`}
+            />
           </a>
 
           <nav className="hidden items-center gap-2 lg:flex">
             {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="rounded-md px-4 py-2 text-base text-ink transition-colors hover:text-brand"
-              >
+              <a key={item.href} href={item.href} className="nav-link">
                 {item.label}
               </a>
             ))}
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <a href="#contato" className="btn-primary">
+            <a href="#contato" className="btn-primary !px-6 !py-2.5 text-sm">
               Entrar em contato
             </a>
-            <a href="#projetos" className="btn-outline">
+            <a href="#projetos" className="btn-outline !px-6 !py-2.5 text-sm">
               Ver todos projetos
             </a>
           </div>
 
           <button
             type="button"
-            className="lg:hidden"
+            className="rounded-md p-2 transition-colors hover:bg-surface lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="Abrir menu"
+            aria-expanded={open}
           >
-            {open ? <X className="h-6 w-6 text-ink" /> : <Menu className="h-6 w-6 text-ink" />}
+            {open ? (
+              <X className="h-6 w-6 text-ink" />
+            ) : (
+              <Menu className="h-6 w-6 text-ink" />
+            )}
           </button>
         </div>
 
-        {open && (
-          <div className="rounded-2xl bg-white p-4 shadow-card lg:hidden">
+        <div
+          className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
+            open ? "max-h-[480px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="mb-4 rounded-2xl bg-white p-4 shadow-card">
             <nav className="flex flex-col">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-md px-3 py-3 text-base text-ink hover:bg-surface"
+                  className="rounded-md px-3 py-3 text-base text-ink transition-colors hover:bg-surface hover:text-brand"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -76,7 +109,7 @@ export function Header() {
               </div>
             </nav>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
