@@ -2,8 +2,9 @@ type Testimonial = {
   quote: string;
   name: string;
   role: string;
-  initials: string;
-  brand: string;
+  avatar: string;
+  brandLogo: string;
+  brandAlt: string;
 };
 
 const testimonials: Testimonial[] = [
@@ -12,16 +13,18 @@ const testimonials: Testimonial[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet tempus augue, ac venenatis lectus tempus ut. Sed sodales erat a libero.",
     name: "Mariana Soares",
     role: "Product and Project Manager @ Amazon",
-    initials: "MS",
-    brand: "amazon",
+    avatar: "/figma/avatar-mariana.svg",
+    brandLogo: "/figma/brand-amazon.svg",
+    brandAlt: "Amazon",
   },
   {
     quote:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet tempus augue, ac venenatis lectus tempus ut. Sed sodales erat a libero.",
     name: "Iago Machado",
     role: "Sênior Software Developer @ CI&T",
-    initials: "IM",
-    brand: "CI&T",
+    avatar: "/figma/avatar-iago.svg",
+    brandLogo: "/figma/brand-cit.svg",
+    brandAlt: "CI&T",
   },
 ];
 
@@ -39,19 +42,22 @@ export function Testimonials() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {testimonials.map((t) => (
-            <article
-              key={t.name}
-              className="rounded-2xl bg-white p-10 shadow-soft"
-            >
-              <div className="text-sm font-semibold uppercase tracking-wider text-ink/70">
-                {t.brand}
-              </div>
+            <article key={t.name} className="rounded-2xl bg-white p-10 shadow-soft">
+              <img
+                src={t.brandLogo}
+                alt={t.brandAlt}
+                className="h-7 w-auto"
+              />
               <p className="mt-5 text-lg leading-relaxed text-muted">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="mt-8 flex items-center gap-4">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-brand text-base font-bold text-white">
-                  {t.initials}
+                <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full">
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="h-full w-full object-cover object-left"
+                  />
                 </div>
                 <div>
                   <p className="text-base font-bold text-ink">{t.name}</p>

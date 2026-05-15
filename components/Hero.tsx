@@ -47,13 +47,11 @@ export function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-brand/20 via-white to-brand/10 shadow-card">
-              <img
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=900&q=80"
-                alt="Allan Melo"
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <img
+              src="/figma/allan.svg"
+              alt="Allan Melo"
+              className="relative z-10 mx-auto w-full max-w-[520px]"
+            />
           </div>
         </div>
       </div>
