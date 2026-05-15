@@ -20,8 +20,18 @@ export function CTA() {
               </h2>
               <div className="mt-10 flex justify-center">
                 <a
-                  href="mailto:allansmelo97@gmail.com"
-                  className="inline-flex items-center justify-center rounded-xl border border-brand bg-white px-9 py-3 text-base font-bold text-brand transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-lg active:translate-y-0"
+                  href="https://web.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl border border-brand bg-white px-9 py-3 text-base font-bold text-brand transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-lg active:translate-y-0 max-md:hidden"
+                >
+                  Entre em contato
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl border border-brand bg-white px-9 py-3 text-base font-bold text-brand transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-lg active:translate-y-0 md:hidden"
                 >
                   Entre em contato
                 </a>

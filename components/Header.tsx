@@ -69,7 +69,12 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <a href="#contato" className="btn-primary !px-6 !py-2.5 text-sm">
+            <a
+              href="https://web.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary !px-6 !py-2.5 text-sm"
+            >
               Entrar em contato
             </a>
             <a href="#projetos" className="btn-outline !px-6 !py-2.5 text-sm">
@@ -124,7 +129,13 @@ export function Header() {
                 </a>
               ))}
               <div className="mt-3 flex flex-col gap-3 border-t border-slate-100 pt-3">
-                <a href="#contato" className="btn-primary w-full">
+                <a
+                  href="https://api.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full"
+                  onClick={() => setOpen(false)}
+                >
                   Entrar em contato
                 </a>
                 <a href="#projetos" className="btn-outline w-full">

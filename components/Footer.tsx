@@ -9,8 +9,26 @@ const quickLinks = [
   "Contato",
 ];
 
-const otherLinks: { label: string; href: string; external?: boolean }[] = [
-  { label: "Entrar em contato", href: "mailto:allansmelo97@gmail.com" },
+type OtherLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+  hideOn?: "mobile" | "desktop";
+};
+
+const otherLinks: OtherLink[] = [
+  {
+    label: "Entrar em contato",
+    href: "https://web.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar",
+    external: true,
+    hideOn: "mobile",
+  },
+  {
+    label: "Entrar em contato",
+    href: "https://api.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar",
+    external: true,
+    hideOn: "desktop",
+  },
   { label: "Baixar currículo", href: "/allan-melo-cv.pdf", external: true },
 ];
 
@@ -49,8 +67,17 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold">Outros</h3>
             <ul className="mt-8 space-y-3">
-              {otherLinks.map(({ label, href, external }) => (
-                <li key={label}>
+              {otherLinks.map(({ label, href, external, hideOn }, i) => (
+                <li
+                  key={`${label}-${i}`}
+                  className={
+                    hideOn === "mobile"
+                      ? "max-md:hidden"
+                      : hideOn === "desktop"
+                        ? "md:hidden"
+                        : undefined
+                  }
+                >
                   <a
                     href={href}
                     {...(external
