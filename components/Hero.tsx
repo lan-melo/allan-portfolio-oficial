@@ -48,7 +48,7 @@ export function Hero() {
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
             <img
-              src="/figma/allan.svg"
+              src="/figma/allan-foto.png"
               alt="Allan Melo"
               className="relative z-10 mx-auto w-full max-w-[520px]"
             />
