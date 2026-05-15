@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden pt-32 pb-20 lg:min-h-[700px] lg:pt-40"
+      className="relative overflow-hidden pt-32 pb-20 lg:min-h-[700px] lg:pt-40 lg:pb-0"
     >
 
       <div className="container-x relative">
@@ -35,7 +35,7 @@ export function Hero() {
             </div>
           </Reveal>
 
-          <Reveal direction="left" delay={120}>
+          <Reveal direction="left" delay={120} className="lg:hidden">
             <div className="relative mx-auto w-full max-w-[520px]">
               <img
                 src="/figma/allan-foto.png"
@@ -45,6 +45,15 @@ export function Hero() {
             </div>
           </Reveal>
         </div>
+      </div>
+
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
+        <img
+          src="/figma/allan-foto.png"
+          alt=""
+          aria-hidden
+          className="absolute bottom-0 right-0 h-full w-auto max-w-none object-contain object-bottom transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+        />
       </div>
     </section>
   );
