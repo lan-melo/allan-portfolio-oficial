@@ -47,12 +47,12 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden lg:block">
         <img
           src="/figma/allan-foto.png"
           alt=""
           aria-hidden
-          className="absolute bottom-0 right-0 h-full w-auto max-w-none object-contain object-bottom transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="absolute bottom-0 left-0 block h-full w-auto max-w-none transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02]"
         />
       </div>
     </section>
