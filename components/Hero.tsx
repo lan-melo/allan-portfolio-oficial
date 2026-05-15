@@ -26,7 +26,20 @@ export function Hero() {
               dados, não a achismos.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#contato" className="btn-primary">
+              <a
+                href="https://web.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary max-md:hidden"
+              >
+                Entrar em contato
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=5524992229292&text=Vamos%20conversar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary md:hidden"
+              >
                 Entrar em contato
               </a>
               <a href="#projetos" className="btn-outline">
